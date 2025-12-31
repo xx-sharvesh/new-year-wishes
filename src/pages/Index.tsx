@@ -119,41 +119,39 @@ const Index = () => {
           <HeartSparkles />
           <div className="flex min-h-screen items-center justify-center animate-fade-in">
             <div className="text-center z-20 relative px-4">
-              <div className="mb-8 flex justify-center gap-4">
-                {[...Array(5)].map((_, i) => (
-                  <Heart
-                    key={i}
-                    className="text-primary fill-primary animate-float"
-                    style={{
-                      width: 40 + i * 5,
-                      height: 40 + i * 5,
-                      animationDelay: `${i * 0.2}s`,
-                    }}
-                  />
-                ))}
+              {/* Decorative ring of hearts */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-primary/20 animate-pulse" />
               </div>
-              <h1 className="text-4xl md:text-7xl font-serif font-bold text-foreground mb-6 tracking-wide">
-                Happy New Year
-              </h1>
-              <h2 className="text-5xl md:text-8xl font-serif font-bold bg-gradient-to-r from-primary via-accent-foreground to-primary bg-clip-text text-transparent animate-pulse">
-                Ammu
-              </h2>
-              <div className="mt-8 flex justify-center gap-2">
-                {[...Array(7)].map((_, i) => (
-                  <Heart
-                    key={i}
-                    className="text-primary fill-primary animate-pulse-heart"
-                    style={{
-                      width: 24,
-                      height: 24,
-                      animationDelay: `${i * 0.1}s`,
-                    }}
+              
+              {/* Main content */}
+              <div className="relative">
+                <div className="flex justify-center mb-6">
+                  <Heart 
+                    className="text-primary fill-primary w-16 h-16 md:w-24 md:h-24 animate-pulse-heart drop-shadow-lg" 
+                    style={{ filter: 'drop-shadow(0 0 20px hsl(333, 71%, 50%))' }}
                   />
-                ))}
+                </div>
+                
+                <h1 className="text-3xl md:text-5xl font-sans font-semibold text-foreground mb-4 tracking-tight">
+                  Happy New Year
+                </h1>
+                
+                <div className="relative inline-block">
+                  <h2 className="text-6xl md:text-9xl font-serif font-bold text-primary tracking-wide">
+                    Ammu
+                  </h2>
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+                </div>
+                
+                <div className="mt-10 flex justify-center items-center gap-3">
+                  <div className="w-12 h-px bg-primary/50" />
+                  <Heart className="text-primary fill-primary w-5 h-5 animate-pulse-heart" />
+                  <span className="text-lg font-sans text-muted-foreground">365 Days</span>
+                  <Heart className="text-primary fill-primary w-5 h-5 animate-pulse-heart" />
+                  <div className="w-12 h-px bg-primary/50" />
+                </div>
               </div>
-              <p className="mt-12 text-xl md:text-2xl text-muted-foreground font-serif italic">
-                Here's to another year of loving you 💕
-              </p>
             </div>
           </div>
         </>
