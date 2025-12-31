@@ -99,6 +99,14 @@ export default {
 			'heart-burst': {
 				'0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
 				'100%': { transform: 'scale(2) rotate(45deg)', opacity: '0' }
+			},
+			'firework-particle': {
+				'0%': { transform: 'translate(-50%, -50%) scale(1)', opacity: '1' },
+				'100%': { transform: 'translate(calc(-50% + cos(var(--angle)) * var(--distance)), calc(-50% + sin(var(--angle)) * var(--distance))) scale(0)', opacity: '0' }
+			},
+			'twinkle': {
+				'0%, 100%': { opacity: '0.3' },
+				'50%': { opacity: '1' }
 			}
 		},
 		animation: {
@@ -110,7 +118,9 @@ export default {
 			'float': 'float 3s ease-in-out infinite',
 			'confetti': 'confetti 3s ease-out forwards',
 			'sparkle': 'sparkle 1.5s ease-in-out infinite',
-			'heart-burst': 'heart-burst 1s ease-out forwards'
+			'heart-burst': 'heart-burst 1s ease-out forwards',
+			'firework-particle': 'firework-particle 1.5s ease-out forwards',
+			'twinkle': 'twinkle 2s ease-in-out infinite'
 		},
   		boxShadow: {
   			'2xs': 'var(--shadow-2xs)',
