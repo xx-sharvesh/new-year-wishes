@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FloatingHearts from "@/components/FloatingHearts";
-import Confetti from "@/components/Confetti";
-import HeartSparkles from "@/components/HeartSparkles";
+import Fireworks from "@/components/Fireworks";
+import Stars from "@/components/Stars";
 
 type Stage = "greeting" | "letter" | "celebration";
 
@@ -114,47 +114,20 @@ const Index = () => {
 
       {/* Celebration Stage */}
       {stage === "celebration" && (
-        <>
-          <Confetti />
-          <HeartSparkles />
-          <div className="flex min-h-screen items-center justify-center animate-fade-in">
-            <div className="text-center z-20 relative px-4">
-              {/* Decorative ring of hearts */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-primary/20 animate-pulse" />
-              </div>
-              
-              {/* Main content */}
-              <div className="relative">
-                <div className="flex justify-center mb-6">
-                  <Heart 
-                    className="text-primary fill-primary w-16 h-16 md:w-24 md:h-24 animate-pulse-heart drop-shadow-lg" 
-                    style={{ filter: 'drop-shadow(0 0 20px hsl(333, 71%, 50%))' }}
-                  />
-                </div>
-                
-                <h1 className="text-3xl md:text-5xl font-sans font-semibold text-foreground mb-4 tracking-tight">
-                  Happy New Year
-                </h1>
-                
-                <div className="relative inline-block">
-                  <h2 className="text-6xl md:text-9xl font-serif font-bold text-primary tracking-wide">
-                    Ammu
-                  </h2>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-                </div>
-                
-                <div className="mt-10 flex justify-center items-center gap-3">
-                  <div className="w-12 h-px bg-primary/50" />
-                  <Heart className="text-primary fill-primary w-5 h-5 animate-pulse-heart" />
-                  <span className="text-lg font-sans text-muted-foreground">365 Days</span>
-                  <Heart className="text-primary fill-primary w-5 h-5 animate-pulse-heart" />
-                  <div className="w-12 h-px bg-primary/50" />
-                </div>
-              </div>
+        <div className="min-h-screen bg-[#0a0a1a] relative overflow-hidden">
+          <Stars />
+          <Fireworks />
+          <div className="flex min-h-screen items-center justify-center animate-fade-in relative z-20">
+            <div className="text-center px-4">
+              <h1 className="text-4xl md:text-7xl font-serif font-bold text-white mb-4 tracking-wide drop-shadow-lg">
+                Happy New Year
+              </h1>
+              <h2 className="text-5xl md:text-8xl font-serif font-bold text-primary drop-shadow-lg">
+                Ammu
+              </h2>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
